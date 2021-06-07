@@ -4,38 +4,17 @@ ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
-      74: 1048236377996083584
-    second: Rumpusetti|Cube.001Action
-  - first:
-      74: -4955014520385540251
-    second: Rumpusetti|Cube.001Action.001
-  - first:
-      74: 4575948357687539300
-    second: Rumpusetti|Cube.001Action.002
-  - first:
-      74: -5271060179957766987
-    second: Rumpusetti|CubeAction.001
-  - first:
       74: -3336130483892249363
     second: Rumpusetti|Cylinder.001Action
   - first:
       74: 2869465745920594268
     second: Rumpusetti|Cylinder.001Action.001
   - first:
-      74: -6533744040827475170
-    second: Rumpusetti|Cylinder.001Action.002
-  - first:
       74: 8073810889331589272
     second: Rumpusetti|Cylinder.001Action.003
   - first:
       74: -5817406368929824865
     second: Rumpusetti|CylinderAction
-  - first:
-      74: 381968177667726697
-    second: Rumpusetti|CylinderAction.001
-  - first:
-      74: 4901929273359416241
-    second: Rumpusetti|NurbsPathAction
   externalObjects: {}
   materials:
     materialImportMode: 2
