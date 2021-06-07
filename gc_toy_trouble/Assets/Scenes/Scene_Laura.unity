@@ -380,6 +380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 701794861}
+  camera: {fileID: 1911122996}
   speed: 8
   gravity: -9.81
   groundCheck: {fileID: 1916367433}
@@ -387,6 +388,8 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 128
+  crouchHeight: 0.1
+  crouchTime: 10
 --- !u!1 &746227726
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,7 +689,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1911122994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.805, z: 0}
+  m_LocalPosition: {x: 0, y: 0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 701794862}
