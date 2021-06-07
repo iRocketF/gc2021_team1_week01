@@ -382,6 +382,7 @@ MonoBehaviour:
   controller: {fileID: 701794861}
   camera: {fileID: 1911122996}
   speed: 8
+  crouchSpeed: 4
   gravity: -9.81
   groundCheck: {fileID: 1916367433}
   groundDistance: 0.4
@@ -389,7 +390,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   crouchHeight: 0.1
-  crouchTime: 10
 --- !u!1 &746227726
 GameObject:
   m_ObjectHideFlags: 0
