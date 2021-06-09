@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TestTeddy : MonoBehaviour
 {
+    private GameManager manager;
     public ScoreSystem scoreSys;
     public float scoreAmount;
     public GameObject brokenVersion;
@@ -12,6 +13,8 @@ public class TestTeddy : MonoBehaviour
 
     private void Start()
     {
+        scoreSys = FindObjectOfType<ScoreSystem>();
+
         isIntact = true;
     }
 
