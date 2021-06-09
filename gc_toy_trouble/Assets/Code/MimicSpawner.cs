@@ -17,7 +17,7 @@ public class MimicSpawner : MonoBehaviour
         }
 
         // choose a random object to be converted into a mimic
-        int mimicNum = Random.Range(0, (scoreObjects.Count - 1));
+        int mimicNum = Random.Range(0, scoreObjects.Count);
 
         // add a mimic script to the chosen gameobject
         scoreObjects[mimicNum].AddComponent<MimicObject>();
@@ -34,9 +34,4 @@ public class MimicSpawner : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

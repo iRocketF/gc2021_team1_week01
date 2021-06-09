@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class ScoreSystem : MonoBehaviour
 {
+    public float startingScore;
     public float score;
-    public float scoreMultiplier;
-
 
     void Start()
     {
-        
+        score = startingScore;
     }
 
     void Update()
