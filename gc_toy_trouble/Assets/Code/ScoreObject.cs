@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScoreObject : MonoBehaviour
 {
-    public ScoreSystem scoreSys;
+    private ScoreSystem scoreSys;
     public float scoreAmount;
 
     private bool isIntact;
@@ -12,6 +12,7 @@ public class ScoreObject : MonoBehaviour
     private void Start()
     {
         isIntact = true;
+        scoreSys = FindObjectOfType<ScoreSystem>();
     }
 
 

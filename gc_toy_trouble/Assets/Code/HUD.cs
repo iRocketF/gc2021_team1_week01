@@ -1,18 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
+using TMPro.EditorUtilities;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private ScoreSystem scoreSystem;
+
+    public TMP_Text scoreText;
+    public TMP_Text timer;
+
+    private void Start()
     {
-        
+        scoreSystem = FindObjectOfType<ScoreSystem>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        UpdateScore();   
+    }
+
+    void UpdateScore()
+    {
+        scoreText.text = "Score: " + scoreSystem.score.ToString();
     }
 }
