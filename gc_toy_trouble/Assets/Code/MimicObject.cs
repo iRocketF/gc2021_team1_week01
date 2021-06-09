@@ -8,11 +8,14 @@ public class MimicObject : MonoBehaviour
 
     public float colorSwapTime;
 
-    public float attForce;
-    public float attCDTimer;
-    public float attCoolDown;
+    // these are hard coded because of not creating prefabs;
+    // going to try creating editable parts for the spawner script
+    // that are then applied to the mimic object upon creation
+    public float attForce = 150f;
+    public float attCDTimer = 0f;
+    public float attCoolDown = 3f;
 
-    public float health;
+    public float health = 3f;
 
     public AudioSource attackSound;
 
@@ -29,17 +32,22 @@ public class MimicObject : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
 
         player = GameObject.FindGameObjectWithTag("Player");
-        attackSound = GetComponentInChildren<AudioSource>();
+        attackSound = GetComponent<AudioSource>();
     }
 
     void Update()
     {
+        // this part checks if the object was hit and then aggroed
+        // object turns red to indicate this is the mimic
         if (wasObjectHit && colorSwapTime < 1)
         {
             colorSwapTime = colorSwapTime + Time.deltaTime / 2;
             colorMat.material.color = Color.Lerp(Color.white, Color.red, colorSwapTime);
         }
 
+        // upon getting hit, this part starts the attacking timer
+        // everytime the timer hits the cooldown, the mimic attacks by lunging at the player
+        // TODO: some sort of damage/health to the player
         if (wasObjectHit)
         {
             attCDTimer = attCDTimer + Time.deltaTime;
@@ -50,8 +58,6 @@ public class MimicObject : MonoBehaviour
                 attCDTimer = 0f;
             }
         }
-
-
 
         CheckPlayerPos();
     }
@@ -71,6 +77,7 @@ public class MimicObject : MonoBehaviour
 
     void JumpPlayer()
     {
+        // roar and attack the player by jumping at them
         attackSound.PlayOneShot(attackSound.clip);
         rigidBody.AddForce((playerPos - transform.position) * attForce);
     }
@@ -82,6 +89,7 @@ public class MimicObject : MonoBehaviour
 
     void Die()
     {
+        // ded
         Destroy(gameObject);
     }
 }
