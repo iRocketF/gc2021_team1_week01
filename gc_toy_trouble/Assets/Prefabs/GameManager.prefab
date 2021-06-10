@@ -79,7 +79,10 @@ MonoBehaviour:
   hasRoundStarted: 0
   isRoundActive: 0
   isMimicAlive: 0
+  isPlayerDead: 0
+  hasDeathSoundPlayed: 0
   mimic: {fileID: 0}
+  player: {fileID: 0}
 --- !u!82 &1025588914975916581
 AudioSource:
   m_ObjectHideFlags: 0
