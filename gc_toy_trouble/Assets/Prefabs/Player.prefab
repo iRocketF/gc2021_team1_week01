@@ -1014,7 +1014,7 @@ MonoBehaviour:
   scoreText: {fileID: 1775002684272114773}
   timer: {fileID: 8887163639739456113}
   gameStatus: {fileID: 5141096309643673242}
-  blackScreen: {fileID: 0}
+  blackScreen: {fileID: 5592170418642658599}
 --- !u!95 &1620404852828453897
 Animator:
   serializedVersion: 3
