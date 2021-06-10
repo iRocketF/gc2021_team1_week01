@@ -131,6 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brokenVersion: {fileID: 7687223673061515182, guid: edf0f8982ee901c4ab427a485a4cd292, type: 3}
   objectPos: {x: 0, y: 0, z: 0}
+  rotationPos: {x: 0, y: 0, z: 0, w: 0}
   scoreSys: {fileID: 0}
-  scoreAmount: 0
+  scoreAmount: -50
   isMimic: 0

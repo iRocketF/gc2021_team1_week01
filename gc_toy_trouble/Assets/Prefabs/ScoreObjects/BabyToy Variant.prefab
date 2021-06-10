@@ -45,7 +45,7 @@ MonoBehaviour:
   objectPos: {x: 0, y: 0, z: 0}
   rotationPos: {x: 0, y: 0, z: 0, w: 0}
   scoreSys: {fileID: 0}
-  scoreAmount: 0
+  scoreAmount: -50
   isMimic: 0
 --- !u!1001 &2970633497763215835
 PrefabInstance:

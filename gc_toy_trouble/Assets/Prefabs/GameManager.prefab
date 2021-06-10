@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9526debf307acb429b13cb8ffad56e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingScore: 0
+  startingScore: 1000
   score: 0
 --- !u!114 &4832882589429886864
 MonoBehaviour:
@@ -61,6 +61,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreObjects: []
+  attForce: 0
+  attCoolDown: 0
+  health: 0
+  soundCD: 0
 --- !u!114 &5454042424215003435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,6 +87,7 @@ MonoBehaviour:
   hasDeathSoundPlayed: 0
   mimic: {fileID: 0}
   player: {fileID: 0}
+  bat: {fileID: 0}
 --- !u!82 &1025588914975916581
 AudioSource:
   m_ObjectHideFlags: 0
@@ -94,8 +99,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c505978c02442444db704777744c3c19, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_PlayOnAwake: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0

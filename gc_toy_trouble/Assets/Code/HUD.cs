@@ -12,10 +12,13 @@ public class HUD : MonoBehaviour
     public TMP_Text gameStatus;
     public Image blackScreen;
 
+    private Bat bat;
+
     private void Start()
     {
         manager = FindObjectOfType<GameManager>();
         scoreSystem = FindObjectOfType<ScoreSystem>();
+        bat = GameObject.FindObjectOfType<Bat>();
         blackScreen.gameObject.SetActive(false);
     }
 
@@ -43,7 +46,12 @@ public class HUD : MonoBehaviour
         else if (!manager.isMimicAlive)
             gameStatus.text = "Mimic destroyed. Press R to restart or ESC to quit";
 
-        if (manager.isPlayerDead && manager.isMimicAlive)
+        if (!bat.isIntact && manager.isPlayerDead && manager.isMimicAlive)
+        {
+            gameStatus.text = "The bat has broken, you have no way to defend yourself... Press R to " +
+                              "restart or ESC to quit";
+        }
+        else if (manager.isPlayerDead && manager.isMimicAlive)
         {
             gameStatus.text = "You didn't find the mimic in time... Press R to restart or ESC to quit";
             blackScreen.gameObject.SetActive(true);
