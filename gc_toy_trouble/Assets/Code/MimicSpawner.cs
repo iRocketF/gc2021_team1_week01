@@ -6,6 +6,11 @@ public class MimicSpawner : MonoBehaviour
 {
     public List<GameObject> scoreObjects;
 
+    public float attForce;
+    public float attCoolDown;
+    public float health;
+    public float soundCD;
+
     void Start()
     {
         scoreObjects = new List<GameObject>();

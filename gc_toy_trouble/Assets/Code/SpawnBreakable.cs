@@ -19,14 +19,13 @@ public class SpawnBreakable : MonoBehaviour
     private void Start()
     {
         scoreSys = FindObjectOfType<ScoreSystem>();
-        objectPos = transform.position;
-        rotationPos = transform.rotation;
         isIntact = true;
     }
 
     private void Update()
     {
         CheckIfMimic();
+        UpdatePosition();
     }
 
 
@@ -44,10 +43,15 @@ public class SpawnBreakable : MonoBehaviour
         }
     }
 
+    void UpdatePosition()
+    {
+        objectPos = transform.position;
+        rotationPos = transform.rotation;
+    }
+
     void CheckIfMimic()
     {
         if (this.GetComponent<MimicObject>() != null)
             isMimic = true;
-
     }
 }
