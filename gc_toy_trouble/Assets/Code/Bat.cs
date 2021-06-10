@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Bat : MonoBehaviour
 {
-    private Animator batAnim;
+    public AudioSource hitSound;
+    public AudioClipLibrary meleeClips;
 
+    private Animator batAnim;
 
     void Start()
     {
         batAnim = GetComponent<Animator>();
-
+        hitSound = GetComponentInChildren<AudioSource>();
     }
 
     void Update()
@@ -18,6 +20,14 @@ public class Bat : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             batAnim.SetTrigger("Swingbat");
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("ScoreObject"))
+        {
+             
         }
     }
 }

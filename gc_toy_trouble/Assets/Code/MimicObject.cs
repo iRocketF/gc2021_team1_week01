@@ -13,9 +13,11 @@ public class MimicObject : MonoBehaviour
     // that are then applied to the mimic object upon creation
     public float attForce = 150f;
     public float attCDTimer = 0f;
-    public float attCoolDown = 3f;
-
+    public float attCoolDown = 2f;
     public float health = 3f;
+
+    // amount of score for killing the mimic
+    public float score;
 
     public AudioSource attackSound;
 
@@ -25,6 +27,8 @@ public class MimicObject : MonoBehaviour
     public Vector3 playerPos;
     public GameObject player;
 
+    private ScoreSystem scoreSys;
+
     void Start()
     {
         wasObjectHit = false;
@@ -33,6 +37,8 @@ public class MimicObject : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player");
         attackSound = GetComponent<AudioSource>();
+
+        scoreSys = FindObjectOfType<ScoreSystem>();
     }
 
     void Update()
@@ -68,7 +74,10 @@ public class MimicObject : MonoBehaviour
         {
             health--;
             wasObjectHit = true;
-            if(health <= 0)
+            attackSound.clip = Resources.Load<AudioClip>("Sounds/mimicaggro");
+            attackSound.pitch = 1f;
+            attackSound.Play();
+            if (health <= 0)
             {
                 Die();
             }
@@ -78,7 +87,9 @@ public class MimicObject : MonoBehaviour
     void JumpPlayer()
     {
         // roar and attack the player by jumping at them
-        attackSound.PlayOneShot(attackSound.clip);
+        attackSound.clip = Resources.Load<AudioClip>("Sounds/mimicgrowl");
+        attackSound.pitch = 3f;
+        attackSound.Play();
         rigidBody.AddForce((playerPos - transform.position) * attForce);
     }
 
@@ -90,6 +101,7 @@ public class MimicObject : MonoBehaviour
     void Die()
     {
         // ded
+        scoreSys.score = scoreSys.score + score;
         Destroy(gameObject);
     }
 }

@@ -1,5 +1,4 @@
 using TMPro;
-using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +9,7 @@ public class HUD : MonoBehaviour
 
     public TMP_Text scoreText;
     public TMP_Text timer;
+    public TMP_Text gameStatus;
 
     private void Start()
     {
@@ -21,6 +21,7 @@ public class HUD : MonoBehaviour
     {
         UpdateScore();
         UpdateClock();
+        UpdateGameStatus();
     }
 
     void UpdateScore()
@@ -31,5 +32,16 @@ public class HUD : MonoBehaviour
     void UpdateClock()
     {
         timer.text = Mathf.RoundToInt(manager.gameTimer).ToString();
+    }
+
+    void UpdateGameStatus()
+    {
+        if (manager.isMimicAlive)
+            gameStatus.text = "Find and destroy the mimic or else...";
+        else if (!manager.isMimicAlive)
+        {
+            gameStatus.text = "Mimic destroyed. Press R to restart the game";
+        }
+
     }
 }
