@@ -11,6 +11,7 @@ public class HUD : MonoBehaviour
     public TMP_Text timer;
     public TMP_Text gameStatus;
     public Image blackScreen;
+    public Image batHealth;
 
     private Bat bat;
 
@@ -18,7 +19,7 @@ public class HUD : MonoBehaviour
     {
         manager = FindObjectOfType<GameManager>();
         scoreSystem = FindObjectOfType<ScoreSystem>();
-        bat = GameObject.FindObjectOfType<Bat>();
+        bat = FindObjectOfType<Bat>();
         blackScreen.gameObject.SetActive(false);
     }
 
@@ -27,6 +28,7 @@ public class HUD : MonoBehaviour
         UpdateScore();
         UpdateClock();
         UpdateGameStatus();
+        UpdateBatHealth();
     }
 
     void UpdateScore()
@@ -50,12 +52,17 @@ public class HUD : MonoBehaviour
         {
             gameStatus.text = "The bat has broken, you have no way to defend yourself... Press R to " +
                               "restart or ESC to quit";
+            blackScreen.gameObject.SetActive(true);
         }
         else if (manager.isPlayerDead && manager.isMimicAlive)
         {
             gameStatus.text = "You didn't find the mimic in time... Press R to restart or ESC to quit";
             blackScreen.gameObject.SetActive(true);
         }
+    }
 
+    void UpdateBatHealth()
+    {
+        batHealth.fillAmount = bat.health / 20f;
     }
 }

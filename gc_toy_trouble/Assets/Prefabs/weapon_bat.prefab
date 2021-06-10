@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 5683791577788732114}
   - component: {fileID: 7567196477876119064}
   - component: {fileID: 7114117625710980340}
-  - component: {fileID: 6019430881248528554}
+  - component: {fileID: 2171156917380255180}
   m_Layer: 0
   m_Name: weapon_bat
   m_TagString: Untagged
@@ -228,8 +228,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &6019430881248528554
-MeshCollider:
+--- !u!136 &2171156917380255180
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -237,8 +237,8 @@ MeshCollider:
   m_GameObject: {fileID: 8215948264655751117}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -4036609773890126764, guid: 13ec7e2310b1631428dcae1c5567de3f, type: 3}
+  m_Enabled: 0
+  m_Radius: 0.0809707
+  m_Height: 0.65932524
+  m_Direction: 2
+  m_Center: {x: -0.0033527457, y: -0.00369346, z: 0.24430422}
