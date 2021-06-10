@@ -50,8 +50,11 @@ public class GameManager : MonoBehaviour
         if (gameTimer >= roundLength && isMimicAlive)
         {
             isPlayerDead = true;
+
             if (!hasDeathSoundPlayed)
+            {
                 PlayDeathSound();
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -85,6 +88,10 @@ public class GameManager : MonoBehaviour
     void DestroyBat()
     {
         isPlayerDead = true;
+
+        if (!hasDeathSoundPlayed)
+            PlayDeathSound();
+
         bat.DestroyBat();
     }
 
@@ -100,7 +107,10 @@ public class GameManager : MonoBehaviour
 
     void PlayDeathSound()
     {
+        AudioSource goreSound = player.AddComponent<AudioSource>();
         AudioSource deathSound = player.GetComponent<AudioSource>();
+        goreSound.clip = Resources.Load<AudioClip>("Sounds/deathsplatter");
+        goreSound.PlayOneShot(goreSound.clip, 0.7f);
         deathSound.PlayOneShot(deathSound.clip, 0.5f);
         hasDeathSoundPlayed = true;
     }
