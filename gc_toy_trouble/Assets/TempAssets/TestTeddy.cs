@@ -4,21 +4,30 @@ using UnityEngine;
 
 public class TestTeddy : MonoBehaviour
 {
+    private GameManager manager;
     public ScoreSystem scoreSys;
     public float scoreAmount;
     public GameObject brokenVersion;
 
+    [SerializeField]
+    private bool isMimic;
     private bool isIntact;
 
     private void Start()
     {
+        scoreSys = FindObjectOfType<ScoreSystem>();
         isIntact = true;
+    }
+
+    private void Update()
+    {
+        CheckIfMimic();
     }
 
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (isIntact && collision.gameObject.CompareTag("Weapon"))
+        if (isIntact && !isMimic && collision.gameObject.CompareTag("Weapon"))
         {
             scoreSys.AddScore(scoreAmount);
             isIntact = false;
@@ -28,6 +37,13 @@ public class TestTeddy : MonoBehaviour
             gameObject.SetActive(false);
 
         }
+    }
+
+    void CheckIfMimic()
+    {
+        if (this.GetComponent<MimicObject>() != null)
+            isMimic = true;
+        
     }
 
 }

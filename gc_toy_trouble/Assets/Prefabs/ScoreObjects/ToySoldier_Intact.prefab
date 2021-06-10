@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4460787049457731067}
   - component: {fileID: 3037242052985188361}
   - component: {fileID: 3037242052985188373}
+  - component: {fileID: -8360241201744426384}
   m_Layer: 0
   m_Name: ToySoldier_Intact
   m_TagString: ScoreObject
@@ -117,3 +118,21 @@ CapsuleCollider:
   m_Height: 0.7821814
   m_Direction: 1
   m_Center: {x: 0.00042262673, y: 0.011535406, z: -0.0009962767}
+--- !u!114 &-8360241201744426384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2803238292063577134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eda28dba95934024b9b83aab6cf09753, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brokenVersion: {fileID: 7207816674678225480, guid: ce4e7afead5dfaa44946f388505741aa, type: 3}
+  objectPos: {x: 0, y: 0, z: 0}
+  rotationPos: {x: 0, y: 0, z: 0, w: 0}
+  scoreSys: {fileID: 0}
+  scoreAmount: -50
+  isMimic: 0

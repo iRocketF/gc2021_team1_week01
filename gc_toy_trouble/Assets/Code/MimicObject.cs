@@ -13,17 +13,24 @@ public class MimicObject : MonoBehaviour
     // that are then applied to the mimic object upon creation
     public float attForce = 150f;
     public float attCDTimer = 0f;
-    public float attCoolDown = 3f;
-
+    public float attCoolDown = 2f;
     public float health = 3f;
 
-    public AudioSource attackSound;
+    public float soundTimer;
+    public float soundCD = 15f;
+
+    // amount of score for killing the mimic
+    public float score;
+
+    public AudioSource mimicSound;
 
     public Rigidbody rigidBody;
     public Renderer colorMat;
 
     public Vector3 playerPos;
     public GameObject player;
+
+    private ScoreSystem scoreSys;
 
     void Start()
     {
@@ -32,7 +39,10 @@ public class MimicObject : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
 
         player = GameObject.FindGameObjectWithTag("Player");
-        attackSound = GetComponent<AudioSource>();
+        mimicSound = GetComponent<AudioSource>();
+        mimicSound.spatialBlend = 1f;
+
+        scoreSys = FindObjectOfType<ScoreSystem>();
     }
 
     void Update()
@@ -54,10 +64,16 @@ public class MimicObject : MonoBehaviour
             if (attCDTimer >= attCoolDown)
             {
                 JumpPlayer();
-                attackSound.Play();
+                mimicSound.Play();
                 attCDTimer = 0f;
             }
         }
+
+        if (soundTimer < soundCD)
+            soundTimer = soundTimer + Time.deltaTime;
+
+        if (soundTimer >= soundCD)
+            PlayTell();
 
         CheckPlayerPos();
     }
@@ -68,17 +84,29 @@ public class MimicObject : MonoBehaviour
         {
             health--;
             wasObjectHit = true;
-            if(health <= 0)
+            mimicSound.clip = Resources.Load<AudioClip>("Sounds/mimicaggro");
+            mimicSound.pitch = 1f;
+            mimicSound.Play();
+            if (health <= 0)
             {
                 Die();
             }
         }
     }
 
+    void PlayTell()
+    {
+        mimicSound.clip = Resources.Load<AudioClip>("Sounds/mimicbreath");
+        mimicSound.Play();
+        soundTimer = 0f;
+    }
+
     void JumpPlayer()
     {
         // roar and attack the player by jumping at them
-        attackSound.PlayOneShot(attackSound.clip);
+        mimicSound.clip = Resources.Load<AudioClip>("Sounds/mimicgrowl");
+        mimicSound.pitch = 3f;
+        mimicSound.Play();
         rigidBody.AddForce((playerPos - transform.position) * attForce);
     }
 
@@ -90,6 +118,7 @@ public class MimicObject : MonoBehaviour
     void Die()
     {
         // ded
+        scoreSys.score = scoreSys.score + score;
         Destroy(gameObject);
     }
 }

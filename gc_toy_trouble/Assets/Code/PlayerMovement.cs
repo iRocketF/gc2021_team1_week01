@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private GameManager manager;
     [SerializeField] private CharacterController controller;
     [SerializeField] private new Camera camera;
 
@@ -29,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        manager = FindObjectOfType<GameManager>();
+
         standingPos = camera.transform.localPosition;
         crouchPos = camera.transform.localPosition;
         crouchPos.y = crouchHeight;
@@ -36,8 +39,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        UpdateMovement();
-        Crouch();
+        if (!manager.isPlayerDead)
+        {
+            UpdateMovement();
+            Crouch();
+        }
+
     }
 
     void UpdateMovement()
