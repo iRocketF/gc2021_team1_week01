@@ -9,6 +9,9 @@ public class Bat : MonoBehaviour
 
     private Animator batAnim;
 
+    public int health = 20;
+    public bool isIntact = true;
+
     void Start()
     {
         batAnim = GetComponent<Animator>();
@@ -27,7 +30,23 @@ public class Bat : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("ScoreObject"))
         {
-             
+            UpdateHealth();
         }
+    }
+
+    public void UpdateHealth()
+    {
+        Debug.Log("Health updated");
+        health--;
+
+        if (health <= 0)
+        {
+            isIntact = false;
+        }
+    }
+
+    public void DestroyBat()
+    {
+        gameObject.SetActive(false);
     }
 }

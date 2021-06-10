@@ -24,6 +24,14 @@ public class SpawnBreakable : MonoBehaviour
 
     private void Update()
     {
+        scoreSys = FindObjectOfType<ScoreSystem>();
+        objectPos = transform.position;
+        rotationPos = transform.rotation;
+        isIntact = true;
+    }
+
+    private void Update()
+    {
         CheckIfMimic();
         UpdatePosition();
     }

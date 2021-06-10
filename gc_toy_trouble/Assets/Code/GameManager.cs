@@ -18,10 +18,12 @@ public class GameManager : MonoBehaviour
 
     public GameObject mimic;
     public GameObject player;
+    public Bat bat;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        bat = GameObject.FindObjectOfType<Bat>();
 
         isRoundActive = true;
     }
@@ -41,6 +43,9 @@ public class GameManager : MonoBehaviour
         if(!isMimicAlive && hasRoundStarted)
             if (Input.GetButtonDown("Restart"))
                 Restart();
+
+        if (!bat.isIntact)
+            DestroyBat();
 
         if (gameTimer >= roundLength && isMimicAlive)
         {
@@ -75,6 +80,12 @@ public class GameManager : MonoBehaviour
             isMimicAlive = false;
             isRoundActive = false;
         }
+    }
+
+    void DestroyBat()
+    {
+        isPlayerDead = true;
+        bat.DestroyBat();
     }
 
     void Restart()

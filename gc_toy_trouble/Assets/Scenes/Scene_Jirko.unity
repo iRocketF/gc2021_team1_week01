@@ -67981,6 +67981,14 @@ PrefabInstance:
       propertyPath: blackScreen
       value: 
       objectReference: {fileID: 326533017}
+    - target: {fileID: 4120042804661730126, guid: 3b8ad981f9869a44cb0188f550355fa2, type: 3}
+      propertyPath: health
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4120042804661730126, guid: 3b8ad981f9869a44cb0188f550355fa2, type: 3}
+      propertyPath: isIntact
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4972009315445786584, guid: 3b8ad981f9869a44cb0188f550355fa2, type: 3}
       propertyPath: m_RootOrder
       value: 2

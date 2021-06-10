@@ -29,9 +29,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brokenVersion: {fileID: 8951677254462150773, guid: d7632064f9f79314ca1b2355f2c48993, type: 3}
-  objectPos: {fileID: 0}
+  objectPos: {x: 0, y: 0, z: 0}
+  rotationPos: {x: 0, y: 0, z: 0, w: 0}
   scoreSys: {fileID: 0}
-  scoreAmount: 0
+  scoreAmount: -50
   isMimic: 0
 --- !u!1001 &2528172521342420076
 PrefabInstance:

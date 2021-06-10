@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9526debf307acb429b13cb8ffad56e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingScore: 0
+  startingScore: 1000
   score: 0
 --- !u!114 &4832882589429886864
 MonoBehaviour:
@@ -83,6 +83,7 @@ MonoBehaviour:
   hasDeathSoundPlayed: 0
   mimic: {fileID: 0}
   player: {fileID: 0}
+  bat: {fileID: 0}
 --- !u!82 &1025588914975916581
 AudioSource:
   m_ObjectHideFlags: 0
