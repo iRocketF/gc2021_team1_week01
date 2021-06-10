@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8079961932033534973
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 253210128753948629, guid: 9472fb89f6dd4f845b1169c3fae0e98c, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7e5f4ba486241094ab2343873987ef77, type: 2}
+    - target: {fileID: 349098895906624174, guid: 9472fb89f6dd4f845b1169c3fae0e98c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7e5f4ba486241094ab2343873987ef77, type: 2}
+    - target: {fileID: 469641750079896266, guid: 9472fb89f6dd4f845b1169c3fae0e98c, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7e5f4ba486241094ab2343873987ef77, type: 2}
+    - target: {fileID: 3480340698697818509, guid: 9472fb89f6dd4f845b1169c3fae0e98c, type: 3}
+      propertyPath: m_Name
+      value: Doll_Pieces Variant BLUE
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253500046462925623, guid: 9472fb89f6dd4f845b1169c3fae0e98c, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253500046462925623, guid: 9472fb89f6dd4f845b1169c3fae0e98c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.0735292
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253500046462925623, guid: 9472fb89f6dd4f845b1169c3fae0e98c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.004636459
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253500046462925623, guid: 9472fb89f6dd4f845b1169c3fae0e98c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.690414
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253500046462925623, guid: 9472fb89f6dd4f845b1169c3fae0e98c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253500046462925623, guid: 9472fb89f6dd4f845b1169c3fae0e98c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253500046462925623, guid: 9472fb89f6dd4f845b1169c3fae0e98c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253500046462925623, guid: 9472fb89f6dd4f845b1169c3fae0e98c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253500046462925623, guid: 9472fb89f6dd4f845b1169c3fae0e98c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253500046462925623, guid: 9472fb89f6dd4f845b1169c3fae0e98c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253500046462925623, guid: 9472fb89f6dd4f845b1169c3fae0e98c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4682972909559272078, guid: 9472fb89f6dd4f845b1169c3fae0e98c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7e5f4ba486241094ab2343873987ef77, type: 2}
+    - target: {fileID: 7072541426399941155, guid: 9472fb89f6dd4f845b1169c3fae0e98c, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7e5f4ba486241094ab2343873987ef77, type: 2}
+    - target: {fileID: 7558484801570070755, guid: 9472fb89f6dd4f845b1169c3fae0e98c, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7e5f4ba486241094ab2343873987ef77, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9472fb89f6dd4f845b1169c3fae0e98c, type: 3}
