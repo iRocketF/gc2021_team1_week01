@@ -48,6 +48,11 @@ public class GameManager : MonoBehaviour
             if (!hasDeathSoundPlayed)
                 PlayDeathSound();
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            BackToMainMenu();
+        }
     }
 
     void GameClock()
@@ -73,6 +78,11 @@ public class GameManager : MonoBehaviour
     }
 
     void Restart()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    void BackToMainMenu()
     {
         SceneManager.LoadScene(0);
     }
