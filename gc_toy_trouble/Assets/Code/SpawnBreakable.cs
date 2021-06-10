@@ -24,14 +24,6 @@ public class SpawnBreakable : MonoBehaviour
 
     private void Update()
     {
-        scoreSys = FindObjectOfType<ScoreSystem>();
-        objectPos = transform.position;
-        rotationPos = transform.rotation;
-        isIntact = true;
-    }
-
-    private void Update()
-    {
         CheckIfMimic();
         UpdatePosition();
     }
@@ -47,7 +39,6 @@ public class SpawnBreakable : MonoBehaviour
             Instantiate(brokenVersion, objectPos, rotationPos);
 
             Destroy(gameObject);
-
         }
     }
 
