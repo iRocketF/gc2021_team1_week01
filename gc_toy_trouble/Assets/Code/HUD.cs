@@ -10,11 +10,13 @@ public class HUD : MonoBehaviour
     public TMP_Text scoreText;
     public TMP_Text timer;
     public TMP_Text gameStatus;
+    public Image blackScreen;
 
     private void Start()
     {
         manager = FindObjectOfType<GameManager>();
         scoreSystem = FindObjectOfType<ScoreSystem>();
+        blackScreen.gameObject.SetActive(false);
     }
 
     void Update()
@@ -39,8 +41,12 @@ public class HUD : MonoBehaviour
         if (manager.isMimicAlive)
             gameStatus.text = "Find and destroy the mimic or else...";
         else if (!manager.isMimicAlive)
+            gameStatus.text = "Mimic destroyed. Press R to restart or ESC to quit";
+
+        if (manager.isPlayerDead && manager.isMimicAlive)
         {
-            gameStatus.text = "Mimic destroyed. Press R to restart the game";
+            gameStatus.text = "You didn't find the mimic in time... Press R to restart or ESC to quit";
+            blackScreen.gameObject.SetActive(true);
         }
 
     }

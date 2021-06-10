@@ -12,11 +12,17 @@ public class GameManager : MonoBehaviour
     public bool hasRoundStarted;
     public bool isRoundActive;
     public bool isMimicAlive;
+    public bool isPlayerDead;
+
+    public bool hasDeathSoundPlayed;
 
     public GameObject mimic;
+    public GameObject player;
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+
         isRoundActive = true;
     }
 
@@ -36,6 +42,12 @@ public class GameManager : MonoBehaviour
             if (Input.GetButtonDown("Restart"))
                 Restart();
 
+        if (gameTimer >= roundLength && isMimicAlive)
+        {
+            isPlayerDead = true;
+            if (!hasDeathSoundPlayed)
+                PlayDeathSound();
+        }
     }
 
     void GameClock()
@@ -63,5 +75,12 @@ public class GameManager : MonoBehaviour
     void Restart()
     {
         SceneManager.LoadScene(0);
+    }
+
+    void PlayDeathSound()
+    {
+        AudioSource deathSound = player.GetComponent<AudioSource>();
+        deathSound.PlayOneShot(deathSound.clip, 0.5f);
+        hasDeathSoundPlayed = true;
     }
 }
