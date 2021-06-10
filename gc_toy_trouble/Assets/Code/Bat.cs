@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bat : MonoBehaviour
 {
-    public AudioSource hitSound;
+    public AudioSource swingSound;
     public AudioClipLibrary meleeClips;
 
     private Animator batAnim;
@@ -15,13 +15,15 @@ public class Bat : MonoBehaviour
     void Start()
     {
         batAnim = GetComponent<Animator>();
-        hitSound = GetComponentInChildren<AudioSource>();
+        swingSound = GetComponentInChildren<AudioSource>();
     }
 
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
+            swingSound.pitch = Random.Range(1f, 1.5f);
+            swingSound.Play();
             batAnim.SetTrigger("Swingbat");
         }
     }
