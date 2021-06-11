@@ -608,7 +608,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "After falling asleep in the toy store you are now locked in! But wait
     a minute, we don\u2019t own toys that make sound here, right? Investigate the
-    creepy sound and silence it with your modified baseball pat! Hurry!\n\nMove -
+    creepy sound and silence it with your modified baseball bat! Hurry!\n\nMove -
     WASD\nHit - Left mouse\nCrouch - Left Ctrl\nBack to menu - ESC"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
