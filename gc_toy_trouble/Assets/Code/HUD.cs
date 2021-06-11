@@ -44,7 +44,7 @@ public class HUD : MonoBehaviour
     void UpdateGameStatus()
     {
         if (manager.isMimicAlive)
-            gameStatus.text = "Find and destroy the mimic or else...";
+            gameStatus.text = "Find and destroy the mimic or else... You have 2 minutes";
         else if (!manager.isMimicAlive)
             gameStatus.text = "Mimic destroyed. Press R to restart or ESC to quit";
 

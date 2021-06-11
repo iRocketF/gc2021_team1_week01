@@ -20,7 +20,7 @@ public class MimicObject : MonoBehaviour
     public float soundCD = 15f;
 
     // amount of score for killing the mimic
-    public float score;
+    public float score = 1000f;
 
     public AudioSource mimicSound;
 
