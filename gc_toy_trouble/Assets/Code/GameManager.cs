@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
         if (isRoundActive && isMimicAlive)
             GameClock();
 
-        if(!isMimicAlive && hasRoundStarted)
+        if((!isMimicAlive && hasRoundStarted) || isPlayerDead)
             if (Input.GetButtonDown("Restart"))
                 Restart();
 
@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             BackToMainMenu();
         }
     }

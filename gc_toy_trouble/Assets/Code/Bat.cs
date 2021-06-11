@@ -12,10 +12,13 @@ public class Bat : MonoBehaviour
     public int health = 20;
     public bool isIntact = true;
 
+    private GameManager manager;
+
     void Start()
     {
         batAnim = GetComponent<Animator>();
         swingSound = GetComponentInChildren<AudioSource>();
+        manager = FindObjectOfType<GameManager>();
     }
 
     void Update()
@@ -32,7 +35,10 @@ public class Bat : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("ScoreObject"))
         {
-            UpdateHealth();
+            if (manager.isMimicAlive)
+            {
+                UpdateHealth();
+            }
         }
     }
 

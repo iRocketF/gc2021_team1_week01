@@ -609,7 +609,7 @@ MonoBehaviour:
   m_text: "After falling asleep in the toy store you are now locked in! But wait
     a minute, we don\u2019t own toys that make sound here, right? Investigate the
     creepy sound and silence it with your modified baseball pat! Hurry!\n\nMove -
-    WASD\nHit - Left mouse\nCrouch - Left Ctrl"
+    WASD\nHit - Left mouse\nCrouch - Left Ctrl\nBack to menu - ESC"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1124,7 +1124,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 30}
-  m_SizeDelta: {x: 600, y: 350}
+  m_SizeDelta: {x: 600, y: 360}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1810647412
 MonoBehaviour:
